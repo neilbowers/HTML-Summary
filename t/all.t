@@ -45,16 +45,16 @@ for my $file ( qw( halloween euc jis sjis ) )
         catfile( File::Spec->curdir, 'etc', "$file.html" ) :
         "./etc/$file.html"
     ;
-    print "Creating abstract from $path ...\n";
+    print STDERR "Creating abstract from $path ...\n";
     for my $length ( 50, 100, 150, 200, 250, 300 )
     {
-        print "Creating abstract of length $length from $path ...\n";
+        print STDERR "Creating abstract of length $length from $path ...\n";
         my $tree = new HTML::TreeBuilder;
         $tree->parse( cat $path );
         my $summary = ( 
             new HTML::Summary USE_META => 0, LENGTH => $length
         )->generate( $tree );
-        print "$summary (", length( $summary ), ")\n";
+        print STDERR "$summary (", length( $summary ), ")\n";
         ok( length( $summary ) <= $length );
     }
 }

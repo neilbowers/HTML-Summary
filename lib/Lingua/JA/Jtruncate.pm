@@ -28,9 +28,18 @@ the character encoding of the text, and recursively deleting Japanese (possibly
 multi-byte) characters from the end of the text until it is underneath the
 length specified. It should work for EUC, JIS and Shift-JIS encodings.
 
+=head1 FUNCTIONS
+
+=head2 jtruncate( $jtext, $length )
+
+B<jtruncate> takes some japanese text and a byte length as arguments, and
+returns the japanese text truncated to that byte length.
+
+    $truncated_jtext = jtruncate( $jtext, $length );
+
 =head1 SEE ALSO
 
-L<Lingua::JA::Jcode>
+    Lingua::JA::Jcode
 
 =head1 AUTHOR
 
@@ -156,38 +165,49 @@ sub jtruncate
     return undef if $length < 0;
     return $text if length( $text ) <= $length;
 
+    # save the original text, in case we need to bomb out with a substr
+
     my $orig_text = $text;
+
     my $encoding = Lingua::JA::Jcode::getcode( \$text );
     if ( not defined $encoding or $encoding !~ /^(?:euc|s?jis)$/ )
     {
+
         # not euc/sjis/jis - just use substr
+
         return substr( $text, 0, $length );
     }
+
+    $text = chop_jchars( $text, $length, $encoding );
+    return substr( $orig_text, 0, $length ) unless defined $text;
 
     # JIS encoding uses escape sequences to shift in and out of single-byte /
     # multi-byte  modes. If the truncation process leaves the text ending in
     # multi-byte mode, we need to add the single-byte escape sequence.
-    # Therefore, we truncate 3 more bytes than necessary just in case from a
-    # JIS encoded string, so we have room to add the escape sequence if
-    # necessary, without going over the $length limit
+    # Therefore, we truncate (at least) 3 more bytes from JIS encoded
+    # string, so we have room to add the single-byte escape sequence without
+    # going over the $length limit
 
-    $length -= 3 if $encoding eq 'jis'; 
+    if ( $encoding eq 'jis' and $text =~ /$jis_code_set{ TWO_BYTE_CHAR }$/ )
+    {
+        $text = chop_jchars( $text, $length - 3, $encoding );
+        return substr( $orig_text, 0, $length ) unless defined $text;
+        $text .= "\x1b\x28\x42";
+    }
+    return $text;
+}
+
+sub chop_jchars
+{
+    my $text = shift;
+    my $length = shift;
+    my $encoding = shift;
+
     while( length( $text ) > $length )
     {
-        unless ( $text =~ s!$char_re{ $encoding }$!!o )
-        {
-            # regex failed - to avoid a potential infinite loop, just use
-            # substr to truncate the text. This is probably not Japanese text
-            # in any case!
-            return substr( $orig_text, 0, $length );
-        }
+        return undef unless $text =~ s!$char_re{ $encoding }$!!o;
     }
-    # If this is JIS, and it ends in multi-byte mode, whack single-byte escape
-    # sequence on the end
-    $text .= "\x1b\x28\x42" if 
-        $encoding eq 'jis' and 
-        $text =~ /$jis_code_set{ TWO_BYTE_CHAR }$/
-    ;
+
     return $text;
 }
 

@@ -10,3 +10,6 @@ Revision history for Perl extension HTML::Summary.
 0.016 Monday April 19 11:08:58 BST 1999
         - text.pl moved to t/all.t to invoke Test::Harness
         - changes to bugs in the test script (from Lupe Christoph)
+
+0.017 Thursday July  1 17:14:44 BST 1999
+        - improved handling of JIS in Lingua::JA::Jtruncate

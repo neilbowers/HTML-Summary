@@ -15,7 +15,7 @@ HTML::Summary - module for generating a summary from a web page.
     use HTML::Summary;
     use HTML::TreeBuilder;
 
-    $tree = new HTML::TreeBuilder;
+    my $tree = new HTML::TreeBuilder;
     $tree->parse( $document );
 
     my $summarizer = new HTML::Summary(
@@ -40,13 +40,11 @@ example, headings, section titles and opening paragraph sentences may be
 favoured over other textual content. A LENGTH option can be used to restrict
 the length of the summary produced.
 
-=head1 METHODS
+=head1 CONSTRUCTOR
 
-=over 4
+=head2 new( $attr1 => $value1 [, $attr2 => $value2 ] )
 
-=item $summarizer = HTML::Summary->new( $attr => $value );
-
-Constructor. Possible attributes are:
+Possible attributes are:
 
 =over 4
 
@@ -60,40 +58,54 @@ Maximum length of summary (in bytes). Default is 500.
 
 =item USE_META
 
-Flag to tell summarizer whether to use the content of the E<gt>METAE<lt> tag in
-the page header, if one is present, instead of generating a summary from the
+Flag to tell summarizer whether to use the content of the C<<META>> tag
+in the page header, if one is present, instead of generating a summary from the
 body text. B<Note that> if the USE_META flag is set, this overrides the LENGTH
-flag - in other words, the summary provided by the E<gt>METAE<lt> tag is
+flag - in other words, the summary provided by the C<<META>> tag is
 returned in full, even if it is greater than LENGTH bytes. Default is 0 (no).
 
 =back
 
-=item $summary = $summarizer->generate( $tree );
+    my $summarizer = new HTML::Summary LENGTH => 200;
 
-Takes an HTML::Element object, and generates a summary from it.
+=head1 METHODS
 
-=item $summary = $summarizer->option( );
+=head2 option( )
 
 Get / set HTML::Summary configuration options.
 
-=item $summary = $summarizer->meta_used( );
+    my $length = $summarizer->option( 'LENGTH' );
+    $summarizer->option( 'USE_META' => 1 );
+
+=head2 generate( $tree )
+
+Takes an HTML::Element object, and generates a summary from it.
+
+    my $tree = new HTML::TreeBuilder;
+    $tree->parse( $document );
+    my $summary = $summarizer->generate( $tree );
+
+=head2 meta_used( )
 
 Returns 1 if the META tag description was used to generate the summary.
 
-=back
+    if ( $summarizer->meta_used() )
+    {
+        # do something ...
+    }
 
 =head1 SEE ALSO
 
-L<HTML::TreeBuilder>,
-L<Text::Sentence>,
-L<Lingua::JA::Jcode>,
-L<Lingua::JA::Jtruncate>
+    HTML::TreeBuilder
+    Text::Sentence
+    Lingua::JA::Jcode
+    Lingua::JA::Jtruncate
 
 =head1 AUTHORS
 
-Neil Bowers E<lt>neilb@cre.canon.co.ukE<gt>, and 
-Tony Rose E<lt>tgr@cre.canon.co.ukE<gt>, 
-Ave Wrigley E<lt>wrigley@cre.canon.co.ukE<gt>
+    Ave Wrigley <wrigley@cre.canon.co.uk>
+    Tony Rose <tgr@cre.canon.co.uk>
+    Neil Bowers <neilb@cre.canon.co.uk>
 
 =head1 COPYRIGHT
 
@@ -143,7 +155,7 @@ use constant IGNORE_TEXT => 1;
 
 use vars qw( $VERSION );
 
-$VERSION = '0.016';
+$VERSION = '0.017';
 
 #==============================================================================
 #

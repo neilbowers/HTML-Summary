@@ -12,7 +12,7 @@ Text::Sentence - module for splitting text into sentences
 
 =head1 SYNOPSIS
 
-    use Text::Sentence;
+    use Text::Sentence qw( split_sentences );
     use locale;
     use POSIX qw( locale_h );
 
@@ -27,14 +27,19 @@ regex. If you set the locale before calling it, it will deal correctly with
 locale dependant capitalization to identify sentence boundaries. Certain well
 know exceptions, such as abreviations, may cause incorrect segmentations.
 
+=head1 FUNCTIONS
+
+=head2 split_sentences( $text )
+
+The split sentences function takes a scalar containing ascii text as an
+argument and returns an array of sentences that the text has been split into.
+
+    @sentences = split_sentences( $text );
+
 =head1 SEE ALSO
 
-=over 4
-
-L<locale>,
-L<POSIX>
-
-=back
+    locale
+    POSIX
 
 =head1 AUTHOR
 
