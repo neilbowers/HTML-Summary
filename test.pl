@@ -8,22 +8,6 @@
 
 require Config;
 
-sub pathsep () {
-    $os = $^O || $Config::Config{ 'osname' } || 'UNIX';
-    if ( $os =~ /(?:win|vms|os2)/i ) 
-    {
-	return '\\';
-    } 
-    elsif ( $os =~ /mac/i ) 
-    {
-	return ':';
-    } 
-    else 
-    {
-	return '/';
-    }
-}
-
 sub cat( $ ) {
     local $/ = undef;
     open( FH, shift ) or return '';
@@ -55,7 +39,10 @@ ok( 1 );
 
 for my $file ( qw( halloween euc jis sjis ) )
 {
-    my $path = join( pathsep, 'etc', "$file.html" );
+    my $path = do('File/Spec.pm') ?
+        File::Spec->catfile( File::Spec->curdir, 'etc', "$file.html" )
+        : "./etc/$file.html"
+    ;
     print STDERR "Creating abstract from $path ...\n";
     for my $length ( 50, 100, 150, 200, 250, 300 )
     {

@@ -33,13 +33,12 @@ HTML::Summary - module for generating a summary from a web page.
 
 =head1 DESCRIPTION
 
-The C<HTML::Summary> module produces summares from the textual content of
+The C<HTML::Summary> module produces summaries from the textual content of
 web pages. It does so using the location heuristic, which determines the value
-of a given sentence based on its position and status within the document.  For
+of a given sentence based on its position and status within the document; for
 example, headings, section titles and opening paragraph sentences may be
-favoured over other textual content. The sentences are scored, sorted,
-formatted and output (in the original order) until the desired summary length
-is reached.
+favoured over other textual content. A LENGTH option can be used to restrict
+the length of the summary produced.
 
 =head1 METHODS
 
@@ -144,7 +143,7 @@ use constant IGNORE_TEXT => 1;
 
 use vars qw( $VERSION );
 
-$VERSION = '0.014';
+$VERSION = '0.015';
 
 #==============================================================================
 #
