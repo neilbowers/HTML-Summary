@@ -1,0 +1,15 @@
+Changes
+MANIFEST
+Makefile.PL
+test.pl
+etc/euc.html
+etc/halloween.html
+etc/jis.html
+etc/sjis.html
+examples/convert.pl
+examples/jtruncate.pl
+examples/summarize.pl
+lib/HTML/Summary.pm
+lib/Lingua/JA/Jtruncate.pm
+lib/Lingua/JA/Jcode.pm
+lib/Text/Sentence.pm
