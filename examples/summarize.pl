@@ -13,5 +13,5 @@ sub cat( $ ) {
 
 my $tree = new HTML::TreeBuilder;
 $tree->parse( cat shift );
-my $summary = ( new HTML::Summary USE_META => 0 )->generate( $tree );
+my $summary = ( new HTML::Summary USE_META => 1 )->generate( $tree );
 print $summary;

@@ -7,6 +7,7 @@
 # (It may become useful if the test is moved to ./t subdirectory.)
 
 require Config;
+use vars qw( $loaded $ntests );
 
 sub cat( $ ) {
     local $/ = undef;
@@ -25,34 +26,35 @@ sub ok( $ ) {
 
 BEGIN { 
     $| = 1; 
-    print "1..24\n"; 
+    print "1..25\n"; 
 }
 
-END {print "not ok 1\n" unless $loaded;}
+END { print "not ok 1\n" unless $loaded; }
 
-my $ntests = 1;
+$ntests = 1;
 use HTML::Summary;
 use HTML::TreeBuilder;
 $loaded = 1;
 
 ok( 1 );
 
+my $has_file_spec = do( 'File/Spec.pm' ) && import File::Spec;
 for my $file ( qw( halloween euc jis sjis ) )
 {
-    my $path = do('File/Spec.pm') ?
-        File::Spec->catfile( File::Spec->curdir, 'etc', "$file.html" )
-        : "./etc/$file.html"
+    my $path = $has_file_spec ?
+        catfile( File::Spec->curdir, 'etc', "$file.html" ) :
+        "./etc/$file.html"
     ;
-    print STDERR "Creating abstract from $path ...\n";
+    print "Creating abstract from $path ...\n";
     for my $length ( 50, 100, 150, 200, 250, 300 )
     {
-        print STDERR "Creating abstract of length $length from $path ...\n";
+        print "Creating abstract of length $length from $path ...\n";
         my $tree = new HTML::TreeBuilder;
         $tree->parse( cat $path );
         my $summary = ( 
             new HTML::Summary USE_META => 0, LENGTH => $length
         )->generate( $tree );
-        print STDERR "$summary (", length( $summary ), ")\n";
+        print "$summary (", length( $summary ), ")\n";
         ok( length( $summary ) <= $length );
     }
 }

@@ -6,3 +6,7 @@ Revision history for Perl extension HTML::Summary.
 0.015 Tuesday March 30 11:12:55 BST 1999
         - README changed to include a description of what HTML::Summary does.
         - bug in test.pl for Mac fixed by using File::Spec to create path.
+
+0.016 Monday April 19 11:08:58 BST 1999
+        - text.pl moved to t/all.t to invoke Test::Harness
+        - changes to bugs in the test script (from Lupe Christoph)

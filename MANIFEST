@@ -2,7 +2,7 @@ README
 Changes
 MANIFEST
 Makefile.PL
-test.pl
+t/all.t
 etc/euc.html
 etc/halloween.html
 etc/jis.html
