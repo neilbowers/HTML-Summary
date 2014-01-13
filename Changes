@@ -1,6 +1,7 @@
 Revision history for Perl module HTML::Summary
 
 0.018 2014-01-13
+    - added "use warnings" to all modules
     - Reformatted Changes (this file) as per CPAN::Changes::Spec
 
 0.017 1999-07-01

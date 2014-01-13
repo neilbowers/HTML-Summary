@@ -129,6 +129,7 @@ outside of CRE without express prior permission from CRE.
 
 require 5.004;
 use strict;
+use warnings;
 
 #==============================================================================
 #

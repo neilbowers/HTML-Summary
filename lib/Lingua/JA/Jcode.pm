@@ -1,4 +1,5 @@
 package Lingua::JA::Jcode;
+use warnings;
 
 ;######################################################################
 ;#
@@ -639,14 +640,14 @@ sub __z2h_jis {
 
 sub z2h_euc {
     local(*_, $n) = @_;
-    &init_z2h_euc unless defined %z2h_euc;
+    &init_z2h_euc unless %z2h_euc ;
     s/($re_euc_c|$re_euc_kana)/$z2h_euc{$1} ? ($n++, $z2h_euc{$1}) : $1/geo;
     $n;
 }
 
 sub z2h_sjis {
     local(*_, $n) = @_;
-    &init_z2h_sjis unless defined %z2h_sjis;
+    &init_z2h_sjis unless %z2h_sjis;
     s/($re_sjis_c)/$z2h_sjis{$1} ? ($n++, $z2h_sjis{$1}) : $1/geo;
     $n;
 }
