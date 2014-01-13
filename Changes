@@ -1,15 +1,19 @@
-Revision history for Perl extension HTML::Summary.
+Revision history for Perl module HTML::Summary
 
-0.01  Thu Sep 17 14:36:49 1998
-	- original version; created by h2xs 1.18
+0.018 2014-01-13
+    - Reformatted Changes (this file) as per CPAN::Changes::Spec
 
-0.015 Tuesday March 30 11:12:55 BST 1999
-        - README changed to include a description of what HTML::Summary does.
-        - bug in test.pl for Mac fixed by using File::Spec to create path.
+0.017 1999-07-01
+    - improved handling of JIS in Lingua::JA::Jtruncate
 
-0.016 Monday April 19 11:08:58 BST 1999
-        - text.pl moved to t/all.t to invoke Test::Harness
-        - changes to bugs in the test script (from Lupe Christoph)
+0.016 1999-04-19
+    - text.pl moved to t/all.t to invoke Test::Harness
+    - changes to bugs in the test script (from Lupe Christoph)
 
-0.017 Thursday July  1 17:14:44 BST 1999
-        - improved handling of JIS in Lingua::JA::Jtruncate
+0.015 1999-03-30
+    - README changed to include a description of what HTML::Summary does.
+    - bug in test.pl for Mac fixed by using File::Spec to create path.
+
+0.01  1998-09-17
+    - original version; created by h2xs 1.18
+
