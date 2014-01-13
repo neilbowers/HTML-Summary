@@ -8,28 +8,27 @@ package HTML::Summary;
 
 =head1 NAME
 
-HTML::Summary - module for generating a summary from a web page.
+HTML::Summary - generate a summary from a web page
 
 =head1 SYNOPSIS
 
-    use HTML::Summary;
-    use HTML::TreeBuilder;
+ use HTML::Summary;
+ use HTML::TreeBuilder;
+ 
+ my $tree = new HTML::TreeBuilder;
+ $tree->parse( $document );
 
-    my $tree = new HTML::TreeBuilder;
-    $tree->parse( $document );
+ my $summarizer = new HTML::Summary(
+     LENGTH      => 200,
+     USE_META    => 1,
+ );
 
-    my $summarizer = new HTML::Summary(
-        LENGTH      => 200,
-        USE_META    => 1,
-    );
-
-    $summary = $summarizer->generate( $tree );
-    $summarizer->option( 'USE_META' => 1 );
-    $length = $summarizer->option( 'LENGTH' );
-    if ( $summarizer->meta_used( ) )
-    {
-        do something
-    }
+ $summary = $summarizer->generate( $tree );
+ $summarizer->option( 'USE_META' => 1 );
+ $length = $summarizer->option( 'LENGTH' );
+ if ( $summarizer->meta_used() ) {
+     # do something
+ }
 
 =head1 DESCRIPTION
 
@@ -66,7 +65,7 @@ returned in full, even if it is greater than LENGTH bytes. Default is 0 (no).
 
 =back
 
-    my $summarizer = new HTML::Summary LENGTH => 200;
+ my $summarizer = new HTML::Summary LENGTH => 200;
 
 =head1 METHODS
 
@@ -74,38 +73,40 @@ returned in full, even if it is greater than LENGTH bytes. Default is 0 (no).
 
 Get / set HTML::Summary configuration options.
 
-    my $length = $summarizer->option( 'LENGTH' );
-    $summarizer->option( 'USE_META' => 1 );
+ my $length = $summarizer->option( 'LENGTH' );
+ $summarizer->option( 'USE_META' => 1 );
 
 =head2 generate( $tree )
 
 Takes an HTML::Element object, and generates a summary from it.
 
-    my $tree = new HTML::TreeBuilder;
-    $tree->parse( $document );
-    my $summary = $summarizer->generate( $tree );
+ my $tree = new HTML::TreeBuilder;
+ $tree->parse( $document );
+ my $summary = $summarizer->generate( $tree );
 
 =head2 meta_used( )
 
 Returns 1 if the META tag description was used to generate the summary.
 
-    if ( $summarizer->meta_used() )
-    {
-        # do something ...
-    }
+ if ( $summarizer->meta_used() ) {
+     # do something ...
+ }
 
 =head1 SEE ALSO
 
-    HTML::TreeBuilder
-    Text::Sentence
-    Lingua::JA::Jcode
-    Lingua::JA::Jtruncate
+L<HTML::TreeBuilder>,
+L<Text::Sentence>,
+L<Lingua::JA::Jcode>,
+L<Lingua::JA::Jtruncate>.
 
 =head1 AUTHORS
 
-    Ave Wrigley <wrigley@cre.canon.co.uk>
-    Tony Rose <tgr@cre.canon.co.uk>
-    Neil Bowers <neilb@cre.canon.co.uk>
+This module was originally whipped up by Neil Bowers and Tony Rose.
+It was then developed and maintained by Ave Wrigley and Tony Rose.
+
+Neil Bowers is currently maintaining the HTML-Summary distribution.
+
+Neil Bowers E<lt>neilb@cpan.orgE<gt>
 
 =head1 COPYRIGHT
 
