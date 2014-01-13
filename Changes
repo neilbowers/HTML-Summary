@@ -1,6 +1,7 @@
 Revision history for Perl module HTML::Summary
 
 0.018 2014-01-13
+    - Added all prereqs to PREREQ_PM in Makefile.PL
     - added "use warnings" to all modules
     - Reformatted Changes (this file) as per CPAN::Changes::Spec
 
