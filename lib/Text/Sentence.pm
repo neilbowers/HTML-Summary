@@ -65,7 +65,7 @@ outside of CRE without express prior permission from CRE.
 #
 #==============================================================================
 
-require 5.004;
+require 5.006;
 use strict;
 use warnings;
 
