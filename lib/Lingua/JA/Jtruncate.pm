@@ -94,7 +94,7 @@ use vars qw(
     %char_re
 );
 
-$VERSION = '0.001';
+$VERSION = '0.018';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( jtruncate );
 

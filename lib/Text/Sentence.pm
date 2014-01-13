@@ -85,7 +85,7 @@ require Exporter;
 
 use vars qw( $VERSION @ISA @EXPORT_OK @PUNCTUATION );
 
-$VERSION = '0.006';
+$VERSION = '0.018';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( split_sentences );
 @PUNCTUATION = ( '\.', '\!', '\?' );

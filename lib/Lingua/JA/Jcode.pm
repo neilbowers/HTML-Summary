@@ -2,6 +2,8 @@ package Lingua::JA::Jcode;
 use warnings;
 use 5.6.0;
 
+our $VERSION = '0.018';
+
 ;######################################################################
 ;#
 ;# jcode.pl: Perl library for Japanese character code conversion
