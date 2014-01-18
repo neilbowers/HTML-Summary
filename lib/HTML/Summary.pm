@@ -99,6 +99,10 @@ L<Text::Sentence>,
 L<Lingua::JA::Jcode>,
 L<Lingua::JA::Jtruncate>.
 
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/HTML-Summary>
+
 =head1 AUTHORS
 
 This module was originally whipped up by Neil Bowers and Tony Rose.

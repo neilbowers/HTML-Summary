@@ -41,6 +41,10 @@ argument and returns an array of sentences that the text has been split into.
     locale
     POSIX
 
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/HTML-Summary>
+
 =head1 AUTHOR
 
 Ave Wrigley E<lt>wrigley@cre.canon.co.ukE<gt>

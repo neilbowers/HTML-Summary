@@ -42,6 +42,10 @@ returns the japanese text truncated to that byte length.
 
 L<Jcode>
 
+=head1 REPOSITORY
+
+L<https://github.com/neilbowers/HTML-Summary>
+
 =head1 AUTHOR
 
 Originally written by Ave Wrigley (AWRIGLEY),
