@@ -48,8 +48,9 @@ Ave Wrigley E<lt>wrigley@cre.canon.co.ukE<gt>
 =head1 COPYRIGHT
 
 Copyright (c) 1997 Canon Research Centre Europe (CRE). All rights reserved.
-This script and any associated documentation or files cannot be distributed
-outside of CRE without express prior permission from CRE.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 
@@ -85,7 +86,7 @@ require Exporter;
 
 use vars qw( $VERSION @ISA @EXPORT_OK @PUNCTUATION );
 
-$VERSION = '0.018';
+$VERSION = '0.019';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( split_sentences );
 @PUNCTUATION = ( '\.', '\!', '\?' );

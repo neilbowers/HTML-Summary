@@ -108,11 +108,12 @@ Neil Bowers is currently maintaining the HTML-Summary distribution.
 
 Neil Bowers E<lt>neilb@cpan.orgE<gt>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
 Copyright (c) 1997 Canon Research Centre Europe (CRE). All rights reserved.
-This script and any associated documentation or files cannot be distributed
-outside of CRE without express prior permission from CRE.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
 
@@ -157,7 +158,7 @@ use constant IGNORE_TEXT => 1;
 
 use vars qw( $VERSION );
 
-our $VERSION = '0.018';
+our $VERSION = '0.019';
 
 #==============================================================================
 #

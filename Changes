@@ -1,5 +1,10 @@
 Revision history for Perl module HTML::Summary
 
+0.019 2014-01-19
+    - Changed licence to 'perl' in doc
+    - Specified licence in Makefile.PL
+    - Changed relevant header in pod from COPYRIGHT to COPYRIGHT AND LICENSE
+
 0.018 2014-01-13
     - Gave all modules the same version number
     - MIN_PERL_VERSION as 5.6.0 in Makefile.PL

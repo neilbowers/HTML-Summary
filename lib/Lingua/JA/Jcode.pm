@@ -2,7 +2,7 @@ package Lingua::JA::Jcode;
 use warnings;
 use 5.6.0;
 
-our $VERSION = '0.018';
+our $VERSION = '0.019';
 
 ;######################################################################
 ;#
