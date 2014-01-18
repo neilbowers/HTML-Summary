@@ -12,6 +12,7 @@ WriteMakefile(
     'NAME'	        => 'HTML::Summary',
     'VERSION_FROM'  => 'lib/HTML/Summary.pm', # finds $VERSION
     'PREREQ_PM'     => {
+        'Jcode'             => '2.06',
         'HTML::TreeBuilder' => 0,
         'constant'          => 0,
         'vars'              => 0,

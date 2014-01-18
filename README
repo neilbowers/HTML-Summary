@@ -16,7 +16,6 @@ modules. The full list of modules is:
 
 HTML::Summary
 Text::Sentence
-Lingua::JA::Jcode
 Lingua::JA::Jtruncate
 
 I have bundled these modules together because this is an early release, and I

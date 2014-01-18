@@ -12,5 +12,4 @@ examples/jtruncate.pl
 examples/summarize.pl
 lib/HTML/Summary.pm
 lib/Lingua/JA/Jtruncate.pm
-lib/Lingua/JA/Jcode.pm
 lib/Text/Sentence.pm

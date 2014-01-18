@@ -4,6 +4,9 @@ Revision history for Perl module HTML::Summary
     - Changed licence to 'perl' in doc
     - Specified licence in Makefile.PL
     - Changed relevant header in pod from COPYRIGHT to COPYRIGHT AND LICENSE
+    - Dropped Lingua::JA::Jcode, and now use the Jcode module from CPAN
+      (which was originally based on the same code used in Lingua::JA::Jcode).
+      If you were using Lingua::JA::Jcode, just switch to using Jcode.
 
 0.018 2014-01-13
     - Gave all modules the same version number
