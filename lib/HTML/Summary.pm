@@ -462,13 +462,13 @@ sub _get_summary_from_meta
             my $node = shift;
             my $flag = shift;
 
-            if ( $node->tag eq 'meta' )
+            if ($node->tag eq 'meta'
+                && defined($node->attr('name'))
+                && lc( $node->attr('name') ) eq 'description'
+                && defined($node->attr('content')))
             {
-                if ( lc( $node->attr( 'name' ) ) eq 'description' )
-                {
-                    $summary = $node->attr( 'content' );
-                    $summary = undef if $summary eq 'content';
-                }
+                $summary = $node->attr( 'content' );
+                $summary = undef if $summary eq 'content';
                 return 0;
             }
             return 1;

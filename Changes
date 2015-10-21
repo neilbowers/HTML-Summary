@@ -3,6 +3,9 @@ Revision history for Perl module HTML::Summary
 0.020 2015-10-21 NEILB
     - Changed URL repos to reflect my changed github username
     - Got rid of use of indirect method notation from doc
+    - Fixed USE_META - was producing a warning if there wasn't
+      a <meta name=description> but there was a different meta tag.
+      Added test t/02-use-meta.t. Thanks to Paul Ryan for RT#92320
 
 0.019 2014-01-19
     - Added github repo to metadata (via Makefile.PL) and to pods
