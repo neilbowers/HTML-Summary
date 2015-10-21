@@ -1,5 +1,8 @@
 Revision history for Perl module HTML::Summary
 
+0.020 2015-10-21 NEILB
+    - Changed URL repos to reflect my changed github username
+
 0.019 2014-01-19
     - Added github repo to metadata (via Makefile.PL) and to pods
     - Dropped Lingua::JA::Jcode, and now use the Jcode module from CPAN

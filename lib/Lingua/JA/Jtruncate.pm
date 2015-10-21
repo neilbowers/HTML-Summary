@@ -44,7 +44,7 @@ L<Jcode>
 
 =head1 REPOSITORY
 
-L<https://github.com/neilbowers/HTML-Summary>
+L<https://github.com/neilb/HTML-Summary>
 
 =head1 AUTHOR
 
@@ -102,7 +102,7 @@ use vars qw(
     %char_re
 );
 
-$VERSION = '0.019';
+$VERSION = '0.020';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( jtruncate );
 

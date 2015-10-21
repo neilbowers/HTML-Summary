@@ -39,8 +39,8 @@ WriteMakefile(
                 bugtracker  => 'http://rt.cpan.org/Public/Dist/Display.html?Name=HTML-Summary',
                 repository  => {
                     type => 'git',
-                    web  => 'https://github.com/neilbowers/HTML-Summary',
-                    url  => 'git://github.com/neilbowers/HTML-Summary.git',
+                    web  => 'https://github.com/neilb/HTML-Summary',
+                    url  => 'https://github.com/neilb/HTML-Summary.git',
                 },
             },
           })

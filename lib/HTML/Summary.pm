@@ -101,7 +101,7 @@ L<Lingua::JA::Jtruncate>.
 
 =head1 REPOSITORY
 
-L<https://github.com/neilbowers/HTML-Summary>
+L<https://github.com/neilb/HTML-Summary>
 
 =head1 AUTHORS
 
@@ -162,7 +162,7 @@ use constant IGNORE_TEXT => 1;
 
 use vars qw( $VERSION );
 
-our $VERSION = '0.019';
+our $VERSION = '0.020';
 
 #==============================================================================
 #

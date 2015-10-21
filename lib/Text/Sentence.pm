@@ -43,7 +43,7 @@ argument and returns an array of sentences that the text has been split into.
 
 =head1 REPOSITORY
 
-L<https://github.com/neilbowers/HTML-Summary>
+L<https://github.com/neilb/HTML-Summary>
 
 =head1 AUTHOR
 
@@ -90,7 +90,7 @@ require Exporter;
 
 use vars qw( $VERSION @ISA @EXPORT_OK @PUNCTUATION );
 
-$VERSION = '0.019';
+$VERSION = '0.020';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( split_sentences );
 @PUNCTUATION = ( '\.', '\!', '\?' );
