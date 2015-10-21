@@ -15,10 +15,10 @@ HTML::Summary - generate a summary from a web page
  use HTML::Summary;
  use HTML::TreeBuilder;
  
- my $tree = new HTML::TreeBuilder;
+ my $tree = HTML::TreeBuilder->new;
  $tree->parse( $document );
 
- my $summarizer = new HTML::Summary(
+ my $summarizer = HTML::Summary->new(
      LENGTH      => 200,
      USE_META    => 1,
  );
@@ -65,7 +65,7 @@ returned in full, even if it is greater than LENGTH bytes. Default is 0 (no).
 
 =back
 
- my $summarizer = new HTML::Summary LENGTH => 200;
+ my $summarizer = HTML::Summary->new(LENGTH => 200);
 
 =head1 METHODS
 
@@ -80,7 +80,7 @@ Get / set HTML::Summary configuration options.
 
 Takes an HTML::Element object, and generates a summary from it.
 
- my $tree = new HTML::TreeBuilder;
+ my $tree = HTML::TreeBuilder->new;
  $tree->parse( $document );
  my $summary = $summarizer->generate( $tree );
 
@@ -194,7 +194,7 @@ my %DEFAULTS = (
 #------------------------------------------------------------------------------
 #
 # new - constructor. Configuration through "hash" type arguments, i.e.
-# my $abs = new HTML::Summary( VAR1 => 'foo', VAR2 => 'bar' );
+# my $abs = HTML::Summary->new( VAR1 => 'foo', VAR2 => 'bar' );
 #
 #------------------------------------------------------------------------------
 
