@@ -1,5 +1,9 @@
 Revision history for Perl module HTML::Summary
 
+0.021 2015-10-25 NEILB
+    - Switched to Dist::Zilla, prompted by a PR to add a LICENSE file --
+      better to have DZ handle that for me. Thanks to MANWAR for the nudge.
+
 0.020 2015-10-21 NEILB
     - Changed URL repos to reflect my changed github username
     - Got rid of use of indirect method notation from doc
