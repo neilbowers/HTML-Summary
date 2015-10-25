@@ -1,6 +1,7 @@
 README
 Changes
 MANIFEST
+LICENSE.txt
 Makefile.PL
 t/all.t
 t/02-use-meta.t
