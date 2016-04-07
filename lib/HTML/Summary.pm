@@ -162,7 +162,7 @@ use constant IGNORE_TEXT => 1;
 
 use vars qw( $VERSION );
 
-our $VERSION = '0.020';
+our $VERSION = '0.021';
 
 #==============================================================================
 #
