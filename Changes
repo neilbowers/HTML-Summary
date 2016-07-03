@@ -1,5 +1,9 @@
 Revision history for Perl module HTML::Summary
 
+0.022 2016-07-03 NEILB
+    - Was explicitly setting $VERSION in all modules, instead of letting
+      Dist::Zilla do it for me. Thanks to MANWAR for pointing this out.
+
 0.021 2015-10-25 NEILB
     - Switched to Dist::Zilla, prompted by a PR to add a LICENSE file --
       better to have DZ handle that for me. Thanks to MANWAR for the nudge.

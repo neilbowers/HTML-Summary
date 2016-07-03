@@ -93,7 +93,6 @@ require Exporter;
 #==============================================================================
 
 use vars qw( 
-    $VERSION 
     @ISA 
     @EXPORT_OK 
     %euc_code_set
@@ -102,7 +101,6 @@ use vars qw(
     %char_re
 );
 
-$VERSION = '0.020';
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( jtruncate );
 
